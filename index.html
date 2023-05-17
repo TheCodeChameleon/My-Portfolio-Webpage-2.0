@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Portfolio Webpage</title>
+
+    <link
+      rel="shortcut icon"
+      href="./photos/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!--BOOTSTRAP-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/scrollReveal.css" />
+    <!--API SCROLLREVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--FONTAWESOME-->
+    <script
+      src="https://kit.fontawesome.com/d55f8dbb8f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- NAVBAR SECTION-->
+    <div class="nav">
+      <div class="imglogo">
+        <img
+          id="logo"
+          src="./photos/logos/logo.png"
+          alt="thecodechameleon logo"
+        />
+      </div>
+      <div class="navdiv">
+        <ul id="navbar">
+          <li id="itens"><a href="#welcome-section">About</a></li>
+          <li id="itens"><a href="#projects">Work</a></li>
+          <li id="itens"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--END OF THE NAVBAR-->
+    <!--WELCOME PAGE SECTION-->
+    <section id="welcome-section">
+      <h1 class="main-title">Hey, I am The Code Chameleon.</h1>
+      <h3>a web developer</h3>
+      <div class="blockBtn">
+        <button class="openBtn" openBtn>ABOUT ME</button>
+      </div>
+    </section>
+    <!--END OF WELCOME PAGE-->
+    <!--ABOUT ME SECTION-->
+    <section class="aboutMe disable" aboutMe>
+      <div class="cardMe">
+        <div class="cardTop">
+          <button class="closeBtn" closeBtn>
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+        <div class="cardBottom">
+          <img
+            src="./photos/aboutme/profile.jpg"
+            alt=""
+            id="front"
+            class="imgMe"
+          />
+          <div class="textMe">
+            <p>
+              Hi, my name is João Victor and I am a technology-loving Front-end
+              developer. I love creating beautiful and functional websites that
+              provide a pleasant experience for users.
+            </p>
+            <p>
+              I am always looking to improve and learn new technologies to offer
+              the best possible work. I keep myself updated with the latest
+              trends and I am always looking for new ways to enhance the quality
+              of my work.
+            </p>
+            <p>
+              In addition, I am a technology enthusiast and I love exploring new
+              gadgets and devices. When I am not coding, I am probably watching
+              a video review of a new smartphone or reading about the latest
+              innovations in artificial intelligence.
+            </p>
+            <p>
+              I believe that technology can have a significant impact on
+              people's lives and I am determined to do my part to make the
+              internet a better and more beautiful place..
+            </p>
+            <p>
+              If you are looking for a technology-loving Front-end developer
+              with a passion for innovation, I am here to help. Let's work
+              together to create something amazing!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--END OF ABOUT ME SECTION-->
+    <!--PROJECTS SECTION-->
+    <section id="projects">
+      <div class="subtitle">
+        <h2>These are some of my projects</h2>
+      </div>
+      <div class="imgs scroll-1">
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-Recipe-Search"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/recipe.png"
+              alt="recipe search site preview"
+              class="projectsimg"
+            />
+            <figcaption>Recipe Search</figcaption>
+          </a>
+        </figure>
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-Tic-Tac-Toe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/tictactoe.png"
+              alt="Tic Tac Toe Game preview"
+              class="projectsimg"
+            />
+            <figcaption>Tic Tac Toe Game</figcaption>
+          </a>
+        </figure>
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-JavaScript-Calculator/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/calculator.png"
+              alt="javascript calculator preview"
+              class="projectsimg"
+            />
+            <figcaption>JavaScript Calculator</figcaption>
+          </a>
+        </figure>
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-255-Clock/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/pomodoro.png"
+              alt="pomodoro timer preview"
+              class="projectsimg"
+            />
+            <figcaption>Pomodoro Timer</figcaption>
+          </a>
+        </figure>
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-Markdown-Previewer/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/previewer.png"
+              alt="markdown previewer"
+              class="projectsimg"
+            />
+            <figcaption>Markdown Previewer</figcaption>
+          </a>
+        </figure>
+
+        <figure class="project-tile">
+          <a
+            href="https://thecodechameleon.github.io/Project-Random-Quote-Machine/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./photos/quote.png"
+              alt="random quote machine preview"
+              class="projectsimg"
+            />
+            <figcaption>Random Quote Machine</figcaption>
+          </a>
+        </figure>
+      </div>
+      <div class="moreDiv scroll-1">
+        <button class="moreBtn">
+          <a
+            href="https://github.com/TheCodeChameleon"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MORE</a
+          >
+        </button>
+      </div>
+    </section>
+    <!--END OF PROJECTS SECTION-->
+    <!--CONTACT SECTION-->
+    <section id="contact">
+      <h1 class="contact-title scroll-2">Let's work together...</h1>
+      <h3 class="scroll-2">How do you take your coffee?</h3>
+      <div class="media scroll-2">
+        <div class="social-media">
+          <a
+            href="https://github.com/TheCodeChameleon"
+            id="profile-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bi bi-github"></i>&nbspGitHub</a
+          >
+        </div>
+        <div class="social-media">
+          <a
+            href="https://www.linkedin.com/in/thecodechameleon/"
+            id="profile-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bi bi-linkedin"></i>&nbspLinkedin</a
+          >
+        </div>
+      </div>
+    </section>
+    <section id="footer">
+      <div class="email">
+        Send me a email:
+        <button id="botao-copiar">
+          <h3 id="texto-copiado" class="emailId">thecodechameleon@gmail.com</h3>
+        </button>
+      </div>
+      <p class="madeBy">Made by TheCodeChameleon</p>
+    </section>
+    <!--END OF CONTACT SECTION-->
+    <script src="assets/script.js"></script>
+    <script src="assets/scrollReveal.js"></script>
+  </body>
+</html>
