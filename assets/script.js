@@ -1,8 +1,6 @@
 const fullName = document.querySelector(".main-title");
 const nameComplete = fullName.innerHTML;
 const aboutMe = document.querySelector("[aboutMe]");
-const openBtn = document.querySelector("[openBtn]");
-const closeBtn = document.querySelector("[closeBtn]");
 fullName.innerHTML = "";
 
 //TypeWriter function
@@ -13,32 +11,57 @@ function TypeWriter(name) {
     myName.forEach((letter, index) => {
       setTimeout(function () {
         fullName.innerHTML += letter;
-      }, 100 * index);
+      }, 90 * index);
     });
-  }, 1000);
+  }, 90);
 }
 
 TypeWriter(nameComplete);
 
-//Copy Button
-document.getElementById("botao-copiar").addEventListener("click", function () {
-  var copyText = document.getElementById("texto-copiado");
-  var transferArea = document.createElement("textarea");
-  transferArea.value = copyText.textContent;
-  document.body.appendChild(transferArea);
-  transferArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(transferArea);
-});
+//Chameleon scroll
 
-//CLOSE AND OPEN BUTTON (SECTION: ABOUT ME)
-openBtn.addEventListener("click", openPage);
-closeBtn.addEventListener("click", closePage);
+const debounce = function (func, wait, immediate) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 
-function openPage() {
-  aboutMe.classList.remove("disable");
+const target = document.querySelectorAll("[data-photo]");
+const animationClass = "animate";
+
+function animeScroll() {
+  const windowTop = window.pageYOffset + window.innerHeight * 0.8;
+  target.forEach(function (element) {
+    if (windowTop > element.offsetTop) {
+      element.classList.add(animationClass);
+    } else {
+      element.classList.remove(animationClass);
+    }
+  });
 }
 
-function closePage() {
-  aboutMe.classList.add("disable");
+animeScroll();
+
+if (target.length) {
+  window.addEventListener(
+    "scroll",
+    debounce(function () {
+      animeScroll();
+    }, 200)
+  );
+}
+
+//Loader
+window.onload = function() {
+  var loader = document.getElementById("loader");
+  loader.style.display = "none";
 }
