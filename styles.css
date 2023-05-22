@@ -288,7 +288,7 @@ body {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 600;
-  line-height: 1;
+  font-size: 1.3rem;
   padding: 1rem 3rem;
   text-align: center;
   text-decoration: none #0d172a solid;
@@ -554,6 +554,17 @@ body {
 
   .main-title {
     height: 40px;
+  }
+  .contact-subtitle,
+  .info-title,
+  .aboutText,
+  #skills,
+  .moreBtn {
+    font-size: 2rem;
+  }
+  .bgPoints {
+    width: 5rem;
+    height: 5rem;
   }
 }
 
