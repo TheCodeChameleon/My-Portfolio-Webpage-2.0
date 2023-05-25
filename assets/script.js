@@ -1,8 +1,7 @@
 const fullName = document.querySelector(".main-title");
 const nameComplete = fullName.innerHTML;
 const aboutMe = document.querySelector("[aboutMe]");
-const openBtn = document.querySelector("[openBtn]");
-const closeBtn = document.querySelector("[closeBtn]");
+const menuShow = document.querySelector("[menu-show]");
 fullName.innerHTML = "";
 
 //TypeWriter function
@@ -13,32 +12,79 @@ function TypeWriter(name) {
     myName.forEach((letter, index) => {
       setTimeout(function () {
         fullName.innerHTML += letter;
-      }, 100 * index);
+      }, 90 * index);
     });
-  }, 1000);
+  }, 90);
 }
 
 TypeWriter(nameComplete);
 
-//Copy Button
-document.getElementById("botao-copiar").addEventListener("click", function () {
-  var copyText = document.getElementById("texto-copiado");
-  var transferArea = document.createElement("textarea");
-  transferArea.value = copyText.textContent;
-  document.body.appendChild(transferArea);
-  transferArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(transferArea);
+//Chameleon scroll
+
+const debounce = function (func, wait, immediate) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+const target = document.querySelectorAll("[data-photo]");
+const animationClass = "animate";
+
+function animeScroll() {
+  const windowTop = window.pageYOffset + window.innerHeight * 0.8;
+  target.forEach(function (element) {
+    if (windowTop > element.offsetTop) {
+      element.classList.add(animationClass);
+    } else {
+      element.classList.remove(animationClass);
+    }
+  });
+}
+
+animeScroll();
+
+if (target.length) {
+  window.addEventListener(
+    "scroll",
+    debounce(function () {
+      animeScroll();
+    }, 200)
+  );
+}
+
+//Loader
+window.onload = function () {
+  var loader = document.getElementById("loader");
+  loader.style.display = "none";
+};
+
+//Menu Display
+menuShow.addEventListener("click", function () {
+  const menuNavbar = document.querySelector("[menu-navbar]");
+  menuNavbar.classList.add("show");
 });
 
-//CLOSE AND OPEN BUTTON (SECTION: ABOUT ME)
-openBtn.addEventListener("click", openPage);
-closeBtn.addEventListener("click", closePage);
+const closeMenu = document.querySelector("[close-menu]");
+//Menu Close Button
+closeMenu.addEventListener("click", async function () {
+  const menuNavbar = document.querySelector("[menu-navbar]");
+  await menuNavbar.classList.remove("show");
+});
 
-function openPage() {
-  aboutMe.classList.remove("disable");
-}
+const itemMobile = document.querySelectorAll("[item-mobile]");
 
-function closePage() {
-  aboutMe.classList.add("disable");
-}
+itemMobile.forEach((item) => {
+  item.addEventListener("click", async function () {
+    const menuNavbar = document.querySelector("[menu-navbar]");
+    await menuNavbar.classList.remove("show");
+  });
+});
