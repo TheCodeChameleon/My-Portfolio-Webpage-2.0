@@ -16,8 +16,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  user-select: none;
-  -webkit-user-select: none;
+  /* user-select: none;
+  -webkit-user-select: none; */
   font-family: "Raleway", sans-serif;
 }
 
@@ -323,16 +323,56 @@ body {
   overflow: hidden;
 }
 
+.project-container {
+  height: 200px;
+  margin-left: 20px;
+}
+/* Image Scroll Effect */
+.image-scroll-1 {
+  background-image: url("./photos/projects/makeyourburger.webp");
+  background-position: top left;
+  background-size: cover;
+  transition: background-position 3s linear;
+}
+
+.image-scroll-1:hover {
+  background-position: bottom left;
+  transition: background-position 3s linear;
+}
+
+.image-scroll-3 {
+  background-image: url("./photos/projects/mubyte.webp");
+  background-position: top left;
+  background-size: cover;
+  transition: background-position 6s linear;
+}
+
+.image-scroll-3:hover {
+  background-position: bottom left;
+  transition: background-position 10s linear;
+}
+
 .project-container,
 .text-container {
   width: 50%;
   padding: 20px;
 }
 
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: rgba(175, 146, 146, 0.16) 0px 1px 4px;
+}
+
 #projectImage {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.hiddenImage {
+  visibility: hidden;
 }
 
 .project p {
