@@ -517,6 +517,7 @@ body {
   flex-direction: column;
   opacity: 0;
   transition: 0.2 linear;
+  overflow: auto;
 }
 
 [menu-navbar].show {
@@ -723,5 +724,17 @@ body {
 
   .nav {
     height: 80px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  #welcome-section {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+
+  .nav {
+    height: 100px;
   }
 }
